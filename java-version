@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class App {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Input
+        System.out.print("Masukkan nama anda: ");
+        String name = input.nextLine();
+
+        System.out.print("Masukkan umur anda: ");
+        int age = input.nextInt();
+        input.nextLine(); // Penting: Buang baki 'enter'
+
+        System.out.print("Bahasa pengaturcaraan kegemaran: ");
+        String language = input.nextLine();
+
+        System.out.print("Jam belajar seminggu: ");
+        double studyHours = input.nextDouble();
+
+        // Logik & Method
+        boolean isAdult = age >= 18;
+        greetStudent(name);
+
+        // Ringkasan Profil
+        System.out.println("\n--- Student Profile ---");
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Favourite Language: " + language);
+        System.out.println("Study Hours Per Week: " + studyHours);
+        System.out.println("Adult: " + isAdult);
+
+        // Decision Making
+        if (studyHours >= 10) {
+            System.out.println("Great study habit!");
+        } else {
+            System.out.println("Try to spend more time practising.");
+        }
+
+        // Loop
+        System.out.println("\nMotivation:");
+        for (int i = 1; i <= 3; i++) {
+            System.out.println("Excellent! Keep it up!");
+        }
+        input.close();
+    }
+
+    // Method Greeting
+    public static void greetStudent(String name) {
+        System.out.println("\nWelcome, " + name + "!");
+    }
+}
